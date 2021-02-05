@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\137105\\locacaoVeiculo\\UsuarioMicroservice\\UsuarioMicroservice\\UsuarioMicroservice.csproj": {}
+    "C:\\Users\\137105\\LocacaoVeiculo\\UsuarioMicroservice\\UsuarioMicroservice\\UsuarioMicroservice.csproj": {}
   },
   "projects": {
-    "C:\\Users\\137105\\locacaoVeiculo\\UsuarioMicroservice\\UsuarioMicroservice\\UsuarioMicroservice.csproj": {
+    "C:\\Users\\137105\\LocacaoVeiculo\\UsuarioMicroservice\\UsuarioMicroservice\\UsuarioMicroservice.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\137105\\locacaoVeiculo\\UsuarioMicroservice\\UsuarioMicroservice\\UsuarioMicroservice.csproj",
+        "projectUniqueName": "C:\\Users\\137105\\LocacaoVeiculo\\UsuarioMicroservice\\UsuarioMicroservice\\UsuarioMicroservice.csproj",
         "projectName": "UsuarioMicroservice",
-        "projectPath": "C:\\Users\\137105\\locacaoVeiculo\\UsuarioMicroservice\\UsuarioMicroservice\\UsuarioMicroservice.csproj",
+        "projectPath": "C:\\Users\\137105\\LocacaoVeiculo\\UsuarioMicroservice\\UsuarioMicroservice\\UsuarioMicroservice.csproj",
         "packagesPath": "C:\\Users\\137105\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\137105\\locacaoVeiculo\\UsuarioMicroservice\\UsuarioMicroservice\\obj\\",
+        "outputPath": "C:\\Users\\137105\\LocacaoVeiculo\\UsuarioMicroservice\\UsuarioMicroservice\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -44,6 +44,12 @@
         "netcoreapp3.1": {
           "dependencies": {
             "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
               "version": "[5.0.2, )"
             },
