@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using UsuarioMicroservice.DBContexts;
+using UsuarioMicroservice.Repository;
 
 namespace UsuarioMicroservice
 {
@@ -28,6 +29,8 @@ namespace UsuarioMicroservice
         {
             services.AddControllers();
             services.AddDbContext<UsuarioContext>(u => u.UseSqlServer(Configuration.GetConnectionString("SqlServerDB")));
+            services.AddTransient<IClienteRepository, ClienteRepository>();
+            services.AddTransient<IOperadorRepository, OperadorRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
