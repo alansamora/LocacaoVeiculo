@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.OpenApi.Models;
 using UsuarioMicroservice.DBContexts;
 using UsuarioMicroservice.Repository;
 
@@ -31,6 +32,20 @@ namespace UsuarioMicroservice
             services.AddDbContext<UsuarioContext>(u => u.UseSqlServer(Configuration.GetConnectionString("SqlServerDB")));
             services.AddTransient<IClienteRepository, ClienteRepository>();
             services.AddTransient<IOperadorRepository, OperadorRepository>();
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Version = "v1",
+                    Title = "Serviço de Usuario",
+                    Description = "Serviço responsável pelo domínio de usuário, realizando cruds para o cliente e o operador seguindo os conceitos da arquitetura de API Rest.",
+                    Contact = new OpenApiContact
+                    {
+                        Name = "Alan Samora Rodrigues",
+                        Email = "alan.samora@localiza.com"
+                    }
+                });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -48,6 +63,11 @@ namespace UsuarioMicroservice
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+            });
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Usuario Microservice V1");
             });
         }
     }

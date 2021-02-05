@@ -56,8 +56,13 @@ C:\Users\137105\LocacaoVeiculo\UsuarioMicroservice\UsuarioMicroservice\bin\Debug
 C:\Users\137105\LocacaoVeiculo\UsuarioMicroservice\UsuarioMicroservice\bin\Debug\netcoreapp3.1\UsuarioMicroservice.pdb
 C:\Users\137105\LocacaoVeiculo\UsuarioMicroservice\UsuarioMicroservice\bin\Debug\netcoreapp3.1\Humanizer.dll
 C:\Users\137105\LocacaoVeiculo\UsuarioMicroservice\UsuarioMicroservice\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
-C:\Users\137105\LocacaoVeiculo\UsuarioMicroservice\UsuarioMicroservice\obj\Debug\netcoreapp3.1\UsuarioMicroservice.csproj.CoreCompileInputs.cache
-C:\Users\137105\LocacaoVeiculo\UsuarioMicroservice\UsuarioMicroservice\obj\Debug\netcoreapp3.1\UsuarioMicroservice.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\137105\LocacaoVeiculo\UsuarioMicroservice\UsuarioMicroservice\obj\Debug\netcoreapp3.1\UsuarioMicroservice.dll
 C:\Users\137105\LocacaoVeiculo\UsuarioMicroservice\UsuarioMicroservice\obj\Debug\netcoreapp3.1\UsuarioMicroservice.pdb
 C:\Users\137105\LocacaoVeiculo\UsuarioMicroservice\UsuarioMicroservice\obj\Debug\netcoreapp3.1\UsuarioMicroservice.genruntimeconfig.cache
+C:\Users\137105\LocacaoVeiculo\UsuarioMicroservice\UsuarioMicroservice\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+C:\Users\137105\LocacaoVeiculo\UsuarioMicroservice\UsuarioMicroservice\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\137105\LocacaoVeiculo\UsuarioMicroservice\UsuarioMicroservice\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\137105\LocacaoVeiculo\UsuarioMicroservice\UsuarioMicroservice\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\137105\LocacaoVeiculo\UsuarioMicroservice\UsuarioMicroservice\obj\Debug\netcoreapp3.1\UsuarioMicroservice.csproj.CoreCompileInputs.cache
+C:\Users\137105\LocacaoVeiculo\UsuarioMicroservice\UsuarioMicroservice\obj\Debug\netcoreapp3.1\UsuarioMicroservice.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\137105\LocacaoVeiculo\UsuarioMicroservice\UsuarioMicroservice\obj\Debug\netcoreapp3.1\UsuarioMicroservice.MvcApplicationPartsAssemblyInfo.cache
