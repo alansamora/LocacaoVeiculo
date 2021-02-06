@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using VeiculoMicroservice.DBContexts;
+using VeiculoMicroservice.Repository;
 
 namespace VeiculoMicroservice
 {
@@ -28,6 +29,9 @@ namespace VeiculoMicroservice
         {
             services.AddControllers();
             services.AddDbContext<VeiculoContext>(u => u.UseSqlServer(Configuration.GetConnectionString("SqlServerDB")));
+            services.AddTransient<IMarcaRepository, MarcaRepository>();
+            services.AddTransient<IModeloRepository, ModeloRepository>();
+            services.AddTransient<IVeiculoRepository, VeiculoRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
