@@ -34,8 +34,8 @@ namespace UsuarioMicroservice.Controllers
         [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
-            var clientes = _clienteRepository.ObterClientePorId(id);
-            return new OkObjectResult(clientes);
+            var cliente = _clienteRepository.ObterClientePorId(id);
+            return new OkObjectResult(cliente);
         }
 
         // POST Inserir um cliente

@@ -34,8 +34,8 @@ namespace UsuarioMicroservice.Controllers
         [HttpGet("{matricula}")]
         public IActionResult Get(int matricula)
         {
-            var operadores = _operadorRepository.ObterOperadorPorMatricula(matricula);
-            return new OkObjectResult(operadores);
+            var operadore = _operadorRepository.ObterOperadorPorMatricula(matricula);
+            return new OkObjectResult(operadore);
         }
 
         // POST Inserir um operador

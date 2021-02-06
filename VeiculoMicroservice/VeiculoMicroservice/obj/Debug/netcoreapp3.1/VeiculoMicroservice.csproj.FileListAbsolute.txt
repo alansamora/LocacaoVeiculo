@@ -59,5 +59,10 @@ C:\Users\137105\LocacaoVeiculo\VeiculoMicroservice\VeiculoMicroservice\bin\Debug
 C:\Users\137105\LocacaoVeiculo\VeiculoMicroservice\VeiculoMicroservice\obj\Debug\netcoreapp3.1\VeiculoMicroservice.csproj.CopyComplete
 C:\Users\137105\LocacaoVeiculo\VeiculoMicroservice\VeiculoMicroservice\bin\Debug\netcoreapp3.1\Humanizer.dll
 C:\Users\137105\LocacaoVeiculo\VeiculoMicroservice\VeiculoMicroservice\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\137105\LocacaoVeiculo\VeiculoMicroservice\VeiculoMicroservice\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+C:\Users\137105\LocacaoVeiculo\VeiculoMicroservice\VeiculoMicroservice\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\137105\LocacaoVeiculo\VeiculoMicroservice\VeiculoMicroservice\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\137105\LocacaoVeiculo\VeiculoMicroservice\VeiculoMicroservice\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\137105\LocacaoVeiculo\VeiculoMicroservice\VeiculoMicroservice\obj\Debug\netcoreapp3.1\VeiculoMicroservice.csproj.CoreCompileInputs.cache
+C:\Users\137105\LocacaoVeiculo\VeiculoMicroservice\VeiculoMicroservice\obj\Debug\netcoreapp3.1\VeiculoMicroservice.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\137105\LocacaoVeiculo\VeiculoMicroservice\VeiculoMicroservice\obj\Debug\netcoreapp3.1\VeiculoMicroservice.MvcApplicationPartsAssemblyInfo.cache
