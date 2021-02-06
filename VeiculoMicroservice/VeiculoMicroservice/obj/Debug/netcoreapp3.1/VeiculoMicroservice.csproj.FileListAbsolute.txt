@@ -13,8 +13,6 @@ C:\Users\137105\LocacaoVeiculo\VeiculoMicroservice\VeiculoMicroservice\bin\Debug
 C:\Users\137105\LocacaoVeiculo\VeiculoMicroservice\VeiculoMicroservice\bin\Debug\netcoreapp3.1\VeiculoMicroservice.runtimeconfig.dev.json
 C:\Users\137105\LocacaoVeiculo\VeiculoMicroservice\VeiculoMicroservice\bin\Debug\netcoreapp3.1\VeiculoMicroservice.dll
 C:\Users\137105\LocacaoVeiculo\VeiculoMicroservice\VeiculoMicroservice\bin\Debug\netcoreapp3.1\VeiculoMicroservice.pdb
-C:\Users\137105\LocacaoVeiculo\VeiculoMicroservice\VeiculoMicroservice\obj\Debug\netcoreapp3.1\VeiculoMicroservice.csproj.CoreCompileInputs.cache
-C:\Users\137105\LocacaoVeiculo\VeiculoMicroservice\VeiculoMicroservice\obj\Debug\netcoreapp3.1\VeiculoMicroservice.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\137105\LocacaoVeiculo\VeiculoMicroservice\VeiculoMicroservice\obj\Debug\netcoreapp3.1\VeiculoMicroservice.dll
 C:\Users\137105\LocacaoVeiculo\VeiculoMicroservice\VeiculoMicroservice\obj\Debug\netcoreapp3.1\VeiculoMicroservice.pdb
 C:\Users\137105\LocacaoVeiculo\VeiculoMicroservice\VeiculoMicroservice\obj\Debug\netcoreapp3.1\VeiculoMicroservice.genruntimeconfig.cache
