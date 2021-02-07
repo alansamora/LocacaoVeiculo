@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "6G8ai4xhe8+likhkhOduWzxZlAJ0aGy6u2v56DRNAseUlCLZVI+N91SfF/j6Zbxa6nmi7wiTdDdbpznW0ASLQw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\137105\\LocacaoVeiculo\\LocacaoMicroservice\\Locacao.Dominio\\Locacao.Dominio.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\137105\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

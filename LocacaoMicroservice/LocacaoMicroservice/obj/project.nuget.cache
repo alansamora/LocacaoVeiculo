@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "RlTsxG7LmwezmKVcp3wNw0xqme9Q/2R+wnZ7GGgLDZ4Ot2OZEUO6rhoXK11znggkaKfDfFnAAU9FpGzrF4NjKw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\137105\\LocacaoVeiculo\\LocacaoMicroservice\\LocacaoMicroservice\\Locacao.Api.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\137105\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.10.9\\microsoft.visualstudio.azure.containers.tools.targets.1.10.9.nupkg.sha512",
+    "C:\\Users\\137105\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.2\\microsoft.aspnetcore.app.ref.3.1.2.nupkg.sha512"
+  ],
+  "logs": []
+}

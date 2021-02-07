@@ -1,0 +1,9 @@
+C:\Users\137105\LocacaoVeiculo\LocacaoMicroservice\LocacaoMicroservice\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\Users\137105\LocacaoVeiculo\LocacaoMicroservice\LocacaoMicroservice\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\137105\LocacaoVeiculo\LocacaoMicroservice\LocacaoMicroservice\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+C:\Users\137105\LocacaoVeiculo\LocacaoMicroservice\LocacaoMicroservice\bin\Debug\netcoreapp3.1\LocacaoMicroservice.exe
+C:\Users\137105\LocacaoVeiculo\LocacaoMicroservice\LocacaoMicroservice\obj\Debug\netcoreapp3.1\LocacaoMicroservice.AssemblyInfoInputs.cache
+C:\Users\137105\LocacaoVeiculo\LocacaoMicroservice\LocacaoMicroservice\obj\Debug\netcoreapp3.1\LocacaoMicroservice.AssemblyInfo.cs
+C:\Users\137105\LocacaoVeiculo\LocacaoMicroservice\LocacaoMicroservice\obj\Debug\netcoreapp3.1\LocacaoMicroservice.RazorTargetAssemblyInfo.cache
+C:\Users\137105\LocacaoVeiculo\LocacaoMicroservice\LocacaoMicroservice\obj\Debug\netcoreapp3.1\staticwebassets\LocacaoMicroservice.StaticWebAssets.Manifest.cache
+C:\Users\137105\LocacaoVeiculo\LocacaoMicroservice\LocacaoMicroservice\obj\Debug\netcoreapp3.1\staticwebassets\LocacaoMicroservice.StaticWebAssets.xml
