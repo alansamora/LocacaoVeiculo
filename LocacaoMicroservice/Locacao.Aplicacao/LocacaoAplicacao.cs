@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace Locacao.Aplicacao
 {
-    public class LocacaoAplicacao : ILocacaoAplication
+    public class LocacaoAplicacao : ILocacaoAplicacao
     {
         public void InserirLocacao(Dominio.Entidades.Locacao locacao)
         {

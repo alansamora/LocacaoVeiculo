@@ -7,6 +7,12 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.9" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Locacao.Aplicacao\Locacao.Aplicacao.csproj" />
+    <ProjectReference Include="..\Locacao.Infraestrutura\Locacao.Infraestrutura.csproj" />
   </ItemGroup>
 
 

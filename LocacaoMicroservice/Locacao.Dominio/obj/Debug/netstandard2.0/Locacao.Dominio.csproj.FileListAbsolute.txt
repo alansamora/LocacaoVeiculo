@@ -1,0 +1,9 @@
+C:\Users\137105\LocacaoVeiculo\LocacaoMicroservice\Locacao.Dominio\bin\Debug\netstandard2.0\Locacao.Dominio.deps.json
+C:\Users\137105\LocacaoVeiculo\LocacaoMicroservice\Locacao.Dominio\bin\Debug\netstandard2.0\Locacao.Dominio.dll
+C:\Users\137105\LocacaoVeiculo\LocacaoMicroservice\Locacao.Dominio\bin\Debug\netstandard2.0\Locacao.Dominio.pdb
+C:\Users\137105\LocacaoVeiculo\LocacaoMicroservice\Locacao.Dominio\obj\Debug\netstandard2.0\Locacao.Dominio.csprojAssemblyReference.cache
+C:\Users\137105\LocacaoVeiculo\LocacaoMicroservice\Locacao.Dominio\obj\Debug\netstandard2.0\Locacao.Dominio.AssemblyInfoInputs.cache
+C:\Users\137105\LocacaoVeiculo\LocacaoMicroservice\Locacao.Dominio\obj\Debug\netstandard2.0\Locacao.Dominio.AssemblyInfo.cs
+C:\Users\137105\LocacaoVeiculo\LocacaoMicroservice\Locacao.Dominio\obj\Debug\netstandard2.0\Locacao.Dominio.csproj.CoreCompileInputs.cache
+C:\Users\137105\LocacaoVeiculo\LocacaoMicroservice\Locacao.Dominio\obj\Debug\netstandard2.0\Locacao.Dominio.dll
+C:\Users\137105\LocacaoVeiculo\LocacaoMicroservice\Locacao.Dominio\obj\Debug\netstandard2.0\Locacao.Dominio.pdb
