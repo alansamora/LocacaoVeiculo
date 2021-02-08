@@ -26,17 +26,11 @@ namespace VeiculoMicroservice.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Nome = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    MarcaId = table.Column<int>(type: "int", nullable: true)
+                    MarcaId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Modelos", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Modelos_Marcas_MarcaId",
-                        column: x => x.MarcaId,
-                        principalTable: "Marcas",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -51,52 +45,25 @@ namespace VeiculoMicroservice.Migrations
                     Combustivel = table.Column<int>(type: "int", nullable: false),
                     LimitePortaMalas = table.Column<int>(type: "int", nullable: false),
                     Categoria = table.Column<int>(type: "int", nullable: false),
-                    MarcaId = table.Column<int>(type: "int", nullable: true),
-                    ModeloId = table.Column<int>(type: "int", nullable: true)
+                    MarcaId = table.Column<int>(type: "int", nullable: false),
+                    ModeloId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Veiculos", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Veiculos_Marcas_MarcaId",
-                        column: x => x.MarcaId,
-                        principalTable: "Marcas",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_Veiculos_Modelos_ModeloId",
-                        column: x => x.ModeloId,
-                        principalTable: "Modelos",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
                 });
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Modelos_MarcaId",
-                table: "Modelos",
-                column: "MarcaId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Veiculos_MarcaId",
-                table: "Veiculos",
-                column: "MarcaId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Veiculos_ModeloId",
-                table: "Veiculos",
-                column: "ModeloId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Veiculos");
+                name: "Marcas");
 
             migrationBuilder.DropTable(
                 name: "Modelos");
 
             migrationBuilder.DropTable(
-                name: "Marcas");
+                name: "Veiculos");
         }
     }
 }

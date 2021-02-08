@@ -29,7 +29,7 @@ namespace VeiculoMicroservice
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddDbContext<VeiculoContext>(u => u.UseSqlServer(Configuration.GetConnectionString("SqlServerDB")));
+            services.AddDbContext<VeiculoContext>(u => u.UseSqlServer(Configuration.GetConnectionString("VeiculoDB")));
             services.AddTransient<IMarcaRepository, MarcaRepository>();
             services.AddTransient<IModeloRepository, ModeloRepository>();
             services.AddTransient<IVeiculoRepository, VeiculoRepository>();

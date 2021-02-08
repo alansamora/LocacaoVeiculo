@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Transactions;
 using Microsoft.AspNetCore.Mvc;
 using VeiculoMicroservice.Model;
+using VeiculoMicroservice.ModelDB;
 using VeiculoMicroservice.Repository;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -16,10 +17,14 @@ namespace VeiculoMicroservice.Controllers
     public class VeiculoController : ControllerBase
     {
         private readonly IVeiculoRepository _veiculoRepository;
+        private readonly IModeloRepository _modeloRepository;
+        private readonly IMarcaRepository _marcaRepository;
 
-        public VeiculoController(IVeiculoRepository veiculoRepository)
+        public VeiculoController(IVeiculoRepository veiculoRepository, IModeloRepository modeloRepository, IMarcaRepository marcaRepository)
         {
             _veiculoRepository = veiculoRepository;
+            _modeloRepository = modeloRepository;
+            _marcaRepository = marcaRepository;
         }
 
         // GET: Buscar todos os veiculos
@@ -27,7 +32,19 @@ namespace VeiculoMicroservice.Controllers
         public IActionResult Get()
         {
             var veiculos = _veiculoRepository.ListarVeiculos();
-            return new OkObjectResult(veiculos);
+            var veiculosRetorno = new List<Veiculo>();
+            if (veiculos != null)
+            {
+                foreach (VeiculoDB veiculoDB in veiculos)
+                {
+                    var modelo = _modeloRepository.ObterModeloPorId(veiculoDB.ModeloId);
+                    var modeloRetorno = new Modelo(modelo.Id, modelo.Nome, _marcaRepository.ObterMarcaPorId(modelo.MarcaId));
+                    var marca = _marcaRepository.ObterMarcaPorId(veiculoDB.MarcaId);
+                    var veiculo = new Veiculo(veiculoDB, marca, modeloRetorno);
+                    veiculosRetorno.Add(veiculo);
+                }
+            }
+            return new OkObjectResult(veiculosRetorno);
         }
 
         // GET Buscar o veiculo pelo id
@@ -35,24 +52,40 @@ namespace VeiculoMicroservice.Controllers
         public IActionResult Get(int id)
         {
             var veiculo = _veiculoRepository.ObterVeiculoPorId(id);
-            return new OkObjectResult(veiculo);
+            if (veiculo != null)
+            {
+                var modelo = _modeloRepository.ObterModeloPorId(veiculo.ModeloId);
+                var modeloRetorno = new Modelo(modelo.Id, modelo.Nome, _marcaRepository.ObterMarcaPorId(modelo.MarcaId));
+                var marca = _marcaRepository.ObterMarcaPorId(veiculo.MarcaId);
+                var veiculoRetorno = new Veiculo(veiculo, marca, modeloRetorno);
+                return new OkObjectResult(veiculoRetorno);
+            }
+            return new NoContentResult();
         }
 
         // POST Inserir um veiculo
         [HttpPost]
-        public IActionResult Post([FromBody] Veiculo veiculo)
+        public IActionResult Post([FromBody] VeiculoDB veiculo)
         {
             using (var scope = new TransactionScope())
             {
                 _veiculoRepository.InserirVeiculo(veiculo);
                 scope.Complete();
-                return CreatedAtAction(nameof(Get), new { id = veiculo.Id }, veiculo);
             }
+            if (veiculo.Id > 0)
+            {
+                var modelo = _modeloRepository.ObterModeloPorId(veiculo.ModeloId);
+                var modeloRetorno = new Modelo(modelo.Id, modelo.Nome, _marcaRepository.ObterMarcaPorId(modelo.MarcaId));
+                var marca = _marcaRepository.ObterMarcaPorId(veiculo.MarcaId);
+                var veiculoRetorno = new Veiculo(veiculo, marca, modeloRetorno);
+                return CreatedAtAction(nameof(Get), new { id = veiculo.Id }, veiculoRetorno);
+            }
+            return new NoContentResult();
         }
 
         // PUT Atualizar um veiculo
         [HttpPut("{id}")]
-        public IActionResult Put([FromBody] Veiculo veiculo)
+        public IActionResult Put([FromBody] VeiculoDB veiculo)
         {
             if (veiculo != null)
             {

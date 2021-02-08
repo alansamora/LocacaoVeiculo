@@ -10,7 +10,7 @@ using UsuarioMicroservice.DBContexts;
 namespace UsuarioMicroservice.Migrations
 {
     [DbContext(typeof(UsuarioContext))]
-    [Migration("20210205210151_UsuarioMigration")]
+    [Migration("20210208175817_UsuarioMigration")]
     partial class UsuarioMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using VeiculoMicroservice.Model;
+using VeiculoMicroservice.ModelDB;
 
 namespace VeiculoMicroservice.DBContexts
 {
@@ -14,7 +15,7 @@ namespace VeiculoMicroservice.DBContexts
         }
 
         public DbSet<Marca> Marcas { get; set; }
-        public DbSet<Modelo> Modelos { get; set; }
-        public DbSet<Veiculo> Veiculos { get; set; }
+        public DbSet<ModeloDB> Modelos { get; set; }
+        public DbSet<VeiculoDB> Veiculos { get; set; }
     }
 }

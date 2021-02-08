@@ -29,7 +29,7 @@ namespace UsuarioMicroservice
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddDbContext<UsuarioContext>(u => u.UseSqlServer(Configuration.GetConnectionString("SqlServerDB")));
+            services.AddDbContext<UsuarioContext>(u => u.UseSqlServer(Configuration.GetConnectionString("UsuarioDB")));
             services.AddTransient<IClienteRepository, ClienteRepository>();
             services.AddTransient<IOperadorRepository, OperadorRepository>();
             services.AddSwaggerGen(c =>

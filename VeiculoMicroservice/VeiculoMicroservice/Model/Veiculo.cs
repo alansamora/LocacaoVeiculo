@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using VeiculoMicroservice.ModelDB;
 
 namespace VeiculoMicroservice.Model
 {
@@ -16,5 +17,18 @@ namespace VeiculoMicroservice.Model
         public TipoCategoria Categoria { get; set; }
         public Marca Marca { get; set; }
         public Modelo Modelo { get; set; }
+
+        public Veiculo(VeiculoDB veiculoDB, Marca marca, Modelo modelo)
+        {
+            Id = veiculoDB.Id;
+            Placa = veiculoDB.Placa;
+            Ano = veiculoDB.Ano;
+            ValorHora = veiculoDB.ValorHora;
+            Combustivel = veiculoDB.Combustivel;
+            LimitePortaMalas = veiculoDB.LimitePortaMalas;
+            Categoria = veiculoDB.Categoria;
+            Marca = marca;
+            Modelo = modelo;
+        }
     }
 }

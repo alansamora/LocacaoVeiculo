@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using VeiculoMicroservice.DBContexts;
-using VeiculoMicroservice.Model;
+using VeiculoMicroservice.ModelDB;
 
 namespace VeiculoMicroservice.Repository
 {
@@ -17,7 +17,7 @@ namespace VeiculoMicroservice.Repository
             _dbContext = dbContext;
         }
 
-        public void AtualizarVeiculo(Veiculo veiculo)
+        public void AtualizarVeiculo(VeiculoDB veiculo)
         {
             _dbContext.Entry(veiculo).State = EntityState.Modified;
             _dbContext.SaveChanges();
@@ -29,18 +29,18 @@ namespace VeiculoMicroservice.Repository
             _dbContext.SaveChanges();
         }
 
-        public void InserirVeiculo(Veiculo veiculo)
+        public void InserirVeiculo(VeiculoDB veiculo)
         {
             _dbContext.Add(veiculo);
             _dbContext.SaveChanges();
         }
 
-        public List<Veiculo> ListarVeiculos()
+        public List<VeiculoDB> ListarVeiculos()
         {
             return _dbContext.Veiculos.ToList();
         }
 
-        public Veiculo ObterVeiculoPorId(int veiculoId)
+        public VeiculoDB ObterVeiculoPorId(int veiculoId)
         {
             return _dbContext.Veiculos.Find(veiculoId);
         }
