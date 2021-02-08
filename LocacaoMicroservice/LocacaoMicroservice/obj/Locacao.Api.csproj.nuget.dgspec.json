@@ -155,7 +155,11 @@
         },
         "frameworks": {
           "netstandard2.1": {
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\137105\\LocacaoVeiculo\\LocacaoMicroservice\\Locacao.Dominio\\Locacao.Dominio.csproj": {
+                "projectPath": "C:\\Users\\137105\\LocacaoVeiculo\\LocacaoMicroservice\\Locacao.Dominio\\Locacao.Dominio.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

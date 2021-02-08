@@ -2033,6 +2033,16 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
+      },
+      "Locacao.Dominio/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/Locacao.Dominio.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Locacao.Dominio.dll": {}
+        }
       }
     }
   },
@@ -7105,10 +7115,16 @@
         "system.xml.xmlserializer.4.3.0.nupkg.sha512",
         "system.xml.xmlserializer.nuspec"
       ]
+    },
+    "Locacao.Dominio/1.0.0": {
+      "type": "project",
+      "path": "../Locacao.Dominio/Locacao.Dominio.csproj",
+      "msbuildProject": "../Locacao.Dominio/Locacao.Dominio.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.1": [
+      "Locacao.Dominio >= 1.0.0",
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.2"
     ]
   },
@@ -7144,7 +7160,11 @@
       },
       "frameworks": {
         "netstandard2.1": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\137105\\LocacaoVeiculo\\LocacaoMicroservice\\Locacao.Dominio\\Locacao.Dominio.csproj": {
+              "projectPath": "C:\\Users\\137105\\LocacaoVeiculo\\LocacaoMicroservice\\Locacao.Dominio\\Locacao.Dominio.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

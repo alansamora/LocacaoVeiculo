@@ -42,7 +42,7 @@ namespace Locacao.Api.Controllers
         [HttpGet("{dataInicio}/{dataFim}")]
         public IActionResult Get(DateTime dataInicio, DateTime dataFim)
         {
-            var veiculos = _locacaoAplicacao.ListarVeiculosDisponiveisLocacaoPorData(dataInicio, dataFim);
+            var veiculos = _locacaoAplicacao.ListarVeiculosDisponiveisParaLocacaoPorData(dataInicio, dataFim);
             return new OkObjectResult(veiculos);
         }
 

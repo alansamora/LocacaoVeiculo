@@ -1,28 +1,34 @@
-﻿using Locacao.Aplicacao.Interfaces;
+﻿using Locacao.Dominio.Repositorios;
 using Locacao.Dominio.Entidades;
 using System;
 using System.Collections.Generic;
+using System.Text;
+using Locacao.Infraestrutura.DBContexts;
+using System.Linq;
 
-namespace Locacao.Aplicacao
+namespace Locacao.Infraestrutura.Repositorios
 {
-    public class LocacaoAplicacao : ILocacaoAplicacao
+    public class LocacaoRepositorio : ILocacaoRepositorio
     {
+        private readonly LocacaoContext _dbContext;
+
+        public LocacaoRepositorio(LocacaoContext dbContext)
+        {
+            _dbContext = dbContext;
+        }
+
         public void InserirLocacao(Dominio.Entidades.Locacao locacao)
         {
-            throw new NotImplementedException();
+            _dbContext.Add(locacao);
+            _dbContext.SaveChanges();
         }
 
         public List<Dominio.Entidades.Locacao> ListarLocacoes()
         {
-            throw new NotImplementedException();
+            return _dbContext.Locacoes.ToList();
         }
 
         public List<Dominio.Entidades.Locacao> ListarLocacoesPorDataECliente(DateTime dataLocacao, int clienteId)
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<Veiculo> ListarVeiculos()
         {
             throw new NotImplementedException();
         }
@@ -34,7 +40,7 @@ namespace Locacao.Aplicacao
 
         public Dominio.Entidades.Locacao ObterLocacaoPorId(int locacaoId)
         {
-            throw new NotImplementedException();
+            return _dbContext.Locacoes.Find(locacaoId);
         }
 
         public double ObterValorTotalDiarias(int veiculoId, double valorHora, double totalHoras)

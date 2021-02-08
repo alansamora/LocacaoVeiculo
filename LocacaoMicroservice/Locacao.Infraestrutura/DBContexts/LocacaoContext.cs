@@ -1,5 +1,4 @@
-﻿using Locacao.Infraestrutura.DBModels;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -12,6 +11,6 @@ namespace Locacao.Infraestrutura.DBContexts
         {
         }
 
-        public DbSet<LocacaoDbModel> Locacoes { get; set; }
+        public DbSet<Locacao.Dominio.Entidades.Locacao> Locacoes { get; set; }
     }
 }

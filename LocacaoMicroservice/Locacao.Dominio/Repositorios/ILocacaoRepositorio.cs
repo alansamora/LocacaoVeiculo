@@ -3,11 +3,10 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Locacao.Aplicacao.Interfaces
+namespace Locacao.Dominio.Repositorios
 {
-    public interface ILocacaoAplicacao
+    public interface ILocacaoRepositorio
     {
-        List<Veiculo> ListarVeiculos();
         void InserirLocacao(Locacao.Dominio.Entidades.Locacao locacao);
         Locacao.Dominio.Entidades.Locacao ObterLocacaoPorId(int locacaoId);
         List<Locacao.Dominio.Entidades.Locacao> ListarLocacoes();

@@ -10,8 +10,6 @@ C:\Users\137105\LocacaoVeiculo\LocacaoMicroservice\LocacaoMicroservice\bin\Debug
 C:\Users\137105\LocacaoVeiculo\LocacaoMicroservice\LocacaoMicroservice\obj\Debug\netcoreapp3.1\Locacao.Api.csprojAssemblyReference.cache
 C:\Users\137105\LocacaoVeiculo\LocacaoMicroservice\LocacaoMicroservice\obj\Debug\netcoreapp3.1\Locacao.Api.AssemblyInfoInputs.cache
 C:\Users\137105\LocacaoVeiculo\LocacaoMicroservice\LocacaoMicroservice\obj\Debug\netcoreapp3.1\Locacao.Api.AssemblyInfo.cs
-C:\Users\137105\LocacaoVeiculo\LocacaoMicroservice\LocacaoMicroservice\obj\Debug\netcoreapp3.1\Locacao.Api.csproj.CoreCompileInputs.cache
-C:\Users\137105\LocacaoVeiculo\LocacaoMicroservice\LocacaoMicroservice\obj\Debug\netcoreapp3.1\Locacao.Api.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\137105\LocacaoVeiculo\LocacaoMicroservice\LocacaoMicroservice\obj\Debug\netcoreapp3.1\Locacao.Api.RazorTargetAssemblyInfo.cache
 C:\Users\137105\LocacaoVeiculo\LocacaoMicroservice\LocacaoMicroservice\obj\Debug\netcoreapp3.1\staticwebassets\Locacao.Api.StaticWebAssets.Manifest.cache
 C:\Users\137105\LocacaoVeiculo\LocacaoMicroservice\LocacaoMicroservice\obj\Debug\netcoreapp3.1\staticwebassets\Locacao.Api.StaticWebAssets.xml
@@ -68,5 +66,9 @@ C:\Users\137105\LocacaoVeiculo\LocacaoMicroservice\LocacaoMicroservice\bin\Debug
 C:\Users\137105\LocacaoVeiculo\LocacaoMicroservice\LocacaoMicroservice\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\137105\LocacaoVeiculo\LocacaoMicroservice\LocacaoMicroservice\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\137105\LocacaoVeiculo\LocacaoMicroservice\LocacaoMicroservice\bin\Debug\netcoreapp3.1\Locacao.Infraestrutura.pdb
-C:\Users\137105\LocacaoVeiculo\LocacaoMicroservice\LocacaoMicroservice\obj\Debug\netcoreapp3.1\Locacao.Api.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\137105\LocacaoVeiculo\LocacaoMicroservice\LocacaoMicroservice\obj\Debug\netcoreapp3.1\Locacao.Api.csproj.CopyComplete
+C:\Users\137105\LocacaoVeiculo\LocacaoMicroservice\LocacaoMicroservice\bin\Debug\netcoreapp3.1\Humanizer.dll
+C:\Users\137105\LocacaoVeiculo\LocacaoMicroservice\LocacaoMicroservice\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\137105\LocacaoVeiculo\LocacaoMicroservice\LocacaoMicroservice\obj\Debug\netcoreapp3.1\Locacao.Api.csproj.CoreCompileInputs.cache
+C:\Users\137105\LocacaoVeiculo\LocacaoMicroservice\LocacaoMicroservice\obj\Debug\netcoreapp3.1\Locacao.Api.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\137105\LocacaoVeiculo\LocacaoMicroservice\LocacaoMicroservice\obj\Debug\netcoreapp3.1\Locacao.Api.MvcApplicationPartsAssemblyInfo.cache

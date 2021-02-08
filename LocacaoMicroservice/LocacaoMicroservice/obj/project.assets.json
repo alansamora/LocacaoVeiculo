@@ -1591,6 +1591,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.1",
         "dependencies": {
+          "Locacao.Dominio": "1.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.2"
         },
         "compile": {
