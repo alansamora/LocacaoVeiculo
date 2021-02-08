@@ -11,7 +11,7 @@ using UsuarioMicroservice.Repository;
 
 namespace UsuarioMicroservice.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/operador")]
     [ApiController]
     public class OperadorController : ControllerBase
     {

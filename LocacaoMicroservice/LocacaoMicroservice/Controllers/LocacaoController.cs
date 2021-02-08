@@ -4,13 +4,14 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Transactions;
 using Locacao.Aplicacao.Interfaces;
+using Locacao.Dominio.Entidades;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace Locacao.Api.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/locacao")]
     [ApiController]
     public class LocacaoController : ControllerBase
     {
@@ -35,6 +36,14 @@ namespace Locacao.Api.Controllers
         {
             var locacao = _locacaoAplicacao.ObterLocacaoPorId(id);
             return new OkObjectResult(locacao);
+        }
+
+        // GET Buscar veículos disponíveis para locacação em um período
+        [HttpGet("{dataInicio}/{dataFim}")]
+        public IActionResult Get(DateTime dataInicio, DateTime dataFim)
+        {
+            var veiculos = _locacaoAplicacao.ListarVeiculosDisponiveisLocacaoPorData(dataInicio, dataFim);
+            return new OkObjectResult(veiculos);
         }
 
         // GET Buscar locações pelo cliente e data de referencia

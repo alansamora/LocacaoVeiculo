@@ -12,6 +12,7 @@ namespace Locacao.Aplicacao.Interfaces
         Locacao.Dominio.Entidades.Locacao ObterLocacaoPorId(int locacaoId);
         List<Locacao.Dominio.Entidades.Locacao> ListarLocacoes();
         List<Locacao.Dominio.Entidades.Locacao> ListarLocacoesPorDataECliente(DateTime dataLocacao, int clienteId);
+        List<Veiculo> ListarVeiculosDisponiveisLocacaoPorData(DateTime dataInicio, DateTime dataFim);
         double ObterValorTotalDiarias(int veiculoId, double valorHora, double totalHoras);
         Valor ObterValorTotalLocacao(int locacaoId, bool carroLimpo, bool tanqueCheio, bool amassado, bool arranhao);
     }

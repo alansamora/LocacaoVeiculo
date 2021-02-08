@@ -27,6 +27,11 @@ namespace Locacao.Aplicacao
             throw new NotImplementedException();
         }
 
+        public List<Veiculo> ListarVeiculosDisponiveisLocacaoPorData(DateTime dataInicio, DateTime dataFim)
+        {
+            throw new NotImplementedException();
+        }
+
         public Dominio.Entidades.Locacao ObterLocacaoPorId(int locacaoId)
         {
             throw new NotImplementedException();

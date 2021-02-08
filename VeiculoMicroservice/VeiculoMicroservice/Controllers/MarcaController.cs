@@ -11,7 +11,7 @@ using VeiculoMicroservice.Repository;
 
 namespace VeiculoMicroservice.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/marca")]
     [ApiController]
     public class MarcaController : ControllerBase
     {
