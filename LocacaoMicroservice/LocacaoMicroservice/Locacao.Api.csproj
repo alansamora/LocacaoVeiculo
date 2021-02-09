@@ -18,6 +18,9 @@
     <ProjectReference Include="..\Locacao.Aplicacao\Locacao.Aplicacao.csproj" />
     <ProjectReference Include="..\Locacao.Infraestrutura\Locacao.Infraestrutura.csproj" />
   </ItemGroup>
-
+	<PropertyGroup>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<noWarn>1591</noWarn>
+	</PropertyGroup>
 
 </Project>

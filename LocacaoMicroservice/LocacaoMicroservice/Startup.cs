@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Locacao.Aplicacao;
@@ -49,6 +50,8 @@ namespace LocacaoMicroservice
                         Email = "alan.samora@localiza.com"
                     }
                 });
+                var filePath = Path.Combine(AppContext.BaseDirectory, "Locacao.Api.xml");
+                c.IncludeXmlComments(filePath);
             });
         }
 

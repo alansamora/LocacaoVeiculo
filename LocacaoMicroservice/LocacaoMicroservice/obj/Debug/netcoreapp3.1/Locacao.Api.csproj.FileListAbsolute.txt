@@ -72,3 +72,5 @@ C:\Users\137105\LocacaoVeiculo\LocacaoMicroservice\LocacaoMicroservice\bin\Debug
 C:\Users\137105\LocacaoVeiculo\LocacaoMicroservice\LocacaoMicroservice\obj\Debug\netcoreapp3.1\Locacao.Api.csproj.CoreCompileInputs.cache
 C:\Users\137105\LocacaoVeiculo\LocacaoMicroservice\LocacaoMicroservice\obj\Debug\netcoreapp3.1\Locacao.Api.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\137105\LocacaoVeiculo\LocacaoMicroservice\LocacaoMicroservice\obj\Debug\netcoreapp3.1\Locacao.Api.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\137105\LocacaoVeiculo\LocacaoMicroservice\LocacaoMicroservice\bin\Debug\netcoreapp3.1\Locacao.Api.xml
+C:\Users\137105\LocacaoVeiculo\LocacaoMicroservice\LocacaoMicroservice\obj\Debug\netcoreapp3.1\Locacao.Api.xml
