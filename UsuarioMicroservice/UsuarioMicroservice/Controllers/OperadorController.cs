@@ -11,6 +11,9 @@ using UsuarioMicroservice.Repository;
 
 namespace UsuarioMicroservice.Controllers
 {
+    /// <summary>
+    /// Serviço de Operador
+    /// </summary>
     [Route("api/operador")]
     [ApiController]
     public class OperadorController : ControllerBase
@@ -22,6 +25,10 @@ namespace UsuarioMicroservice.Controllers
             _operadorRepository = operadorRepository;
         }
 
+        /// <summary>
+        /// Buscar todos os operadores.
+        /// </summary>
+        /// <returns>Lista de objeto operador</returns>
         // GET: Buscar todos os operadores
         [HttpGet]
         public IActionResult Get()
@@ -30,6 +37,11 @@ namespace UsuarioMicroservice.Controllers
             return new OkObjectResult(operadores);
         }
 
+        /// <summary>
+        /// Buscar um operador pela matricula.
+        /// </summary>
+        /// <param name="matricula">Matricula do operador</param>
+        /// <returns>Objeto operador</returns>
         // GET Buscar operador pela matricula
         [HttpGet("{matricula}")]
         public IActionResult Get(int matricula)
@@ -38,6 +50,10 @@ namespace UsuarioMicroservice.Controllers
             return new OkObjectResult(operadore);
         }
 
+        /// <summary>
+        /// Inserir um operador.
+        /// </summary>
+        /// <returns>Objeto operador</returns>
         // POST Inserir um operador
         [HttpPost]
         public IActionResult Post([FromBody] Operador operador)
@@ -50,6 +66,11 @@ namespace UsuarioMicroservice.Controllers
             }
         }
 
+        /// <summary>
+        /// Atualizar os dados de um operador.
+        /// </summary>
+        /// <param name="operador">Objeto operador para atualizar</param>
+        /// <returns>Objeto operador</returns>
         // PUT Atualizar um operador
         [HttpPut("{operador}")]
         public IActionResult Put([FromBody] Operador operador)
@@ -66,6 +87,11 @@ namespace UsuarioMicroservice.Controllers
             return new NoContentResult();
         }
 
+        /// <summary>
+        /// Excluir um operador pela matricula.
+        /// </summary>
+        /// <param name="matricula">Matricula do operador</param>
+        /// <returns>Mensagem de sucesso</returns>
         // DELETE Deletar um operador
         [HttpDelete("{matricula}")]
         public IActionResult Delete(int matricula)

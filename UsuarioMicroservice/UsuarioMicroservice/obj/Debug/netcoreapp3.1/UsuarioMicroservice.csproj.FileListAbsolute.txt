@@ -66,3 +66,5 @@ C:\Users\137105\LocacaoVeiculo\UsuarioMicroservice\UsuarioMicroservice\bin\Debug
 C:\Users\137105\LocacaoVeiculo\UsuarioMicroservice\UsuarioMicroservice\obj\Debug\netcoreapp3.1\UsuarioMicroservice.csproj.CoreCompileInputs.cache
 C:\Users\137105\LocacaoVeiculo\UsuarioMicroservice\UsuarioMicroservice\obj\Debug\netcoreapp3.1\UsuarioMicroservice.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\137105\LocacaoVeiculo\UsuarioMicroservice\UsuarioMicroservice\obj\Debug\netcoreapp3.1\UsuarioMicroservice.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\137105\LocacaoVeiculo\UsuarioMicroservice\UsuarioMicroservice\bin\Debug\netcoreapp3.1\UsuarioMicroservice.xml
+C:\Users\137105\LocacaoVeiculo\UsuarioMicroservice\UsuarioMicroservice\obj\Debug\netcoreapp3.1\UsuarioMicroservice.xml

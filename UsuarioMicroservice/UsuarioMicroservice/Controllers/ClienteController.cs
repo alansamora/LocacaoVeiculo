@@ -11,6 +11,9 @@ using UsuarioMicroservice.Repository;
 
 namespace UsuarioMicroservice.Controllers
 {
+    /// <summary>
+    /// Serviço de Cliente
+    /// </summary>
     [Route("api/cliente")]
     [ApiController]
     public class ClienteController : ControllerBase
@@ -22,6 +25,10 @@ namespace UsuarioMicroservice.Controllers
             _clienteRepository = clienteRepository;
         }
 
+        /// <summary>
+        /// Buscar todos os clientes.
+        /// </summary>
+        /// <returns>Lista de objeto cliente</returns>
         // GET: Buscar todos os clientes
         [HttpGet]
         public IActionResult Get()
@@ -30,6 +37,11 @@ namespace UsuarioMicroservice.Controllers
             return new OkObjectResult(clientes);
         }
 
+        /// <summary>
+        /// Buscar um cliente pelo id.
+        /// </summary>
+        /// <param name="id">Id do cliente</param>
+        /// <returns>Objeto cliente</returns>
         // GET Buscar o cliente por id
         [HttpGet("{id}")]
         public IActionResult Get(int id)
@@ -38,6 +50,12 @@ namespace UsuarioMicroservice.Controllers
             return new OkObjectResult(cliente);
         }
 
+        /// <summary>
+        /// Buscar um cliente pelo CPF e senha de login.
+        /// </summary>
+        /// <param name="cpf">CPF do cliente</param>
+        /// <param name="senha">Senha do cliente</param>
+        /// <returns>Objeto cliente</returns>
         // GET Buscar o cliente por id
         [HttpGet("{cpf}/{senha}")]
         public IActionResult Get(string cpf, string senha)
@@ -46,6 +64,10 @@ namespace UsuarioMicroservice.Controllers
             return new OkObjectResult(cliente);
         }
 
+        /// <summary>
+        /// Inserir um cliente.
+        /// </summary>
+        /// <returns>Objeto cliente</returns>
         // POST Inserir um cliente
         [HttpPost]
         public IActionResult Post([FromBody] Cliente cliente)
@@ -58,6 +80,11 @@ namespace UsuarioMicroservice.Controllers
             }
         }
 
+        /// <summary>
+        /// Atualizar os dados de um cliente.
+        /// </summary>
+        /// <param name="cliente">Objeto cliente para atualizar</param>
+        /// <returns>Objeto cliente</returns>
         // PUT Atualizar um cliente
         [HttpPut("{cliente}")]
         public IActionResult Put([FromBody] Cliente cliente)
@@ -74,6 +101,11 @@ namespace UsuarioMicroservice.Controllers
             return new NoContentResult();
         }
 
+        /// <summary>
+        /// Excluir um cliente pelo id.
+        /// </summary>
+        /// <param name="id">Id do cliente</param>
+        /// <returns>Mensagem de sucesso</returns>
         // DELETE Deletar um cliente
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
