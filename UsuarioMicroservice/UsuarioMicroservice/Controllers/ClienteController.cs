@@ -38,6 +38,14 @@ namespace UsuarioMicroservice.Controllers
             return new OkObjectResult(cliente);
         }
 
+        // GET Buscar o cliente por id
+        [HttpGet("{cpf}/{senha}")]
+        public IActionResult Get(string cpf, string senha)
+        {
+            var cliente = _clienteRepository.ObterClientePorCpfESenha(cpf, senha);
+            return new OkObjectResult(cliente);
+        }
+
         // POST Inserir um cliente
         [HttpPost]
         public IActionResult Post([FromBody] Cliente cliente)

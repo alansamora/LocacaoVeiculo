@@ -42,7 +42,9 @@ namespace UsuarioMicroservice.Repository
 
         public Operador ObterOperadorPorMatricula(int matricula)
         {
-            return _dbContext.Operadores.Find(matricula);
+            var operador = _dbContext.Operadores.Find(matricula);
+            if (operador != null) return operador;
+            return new Operador();
         }
     }
 }

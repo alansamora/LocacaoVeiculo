@@ -13,5 +13,6 @@ namespace VeiculoMicroservice.Repository
         void AtualizarVeiculo(VeiculoDB veiculo);
         VeiculoDB ObterVeiculoPorId(int veiculoId);
         List<VeiculoDB> ListarVeiculos();
+        List<VeiculoDB> ListarVeiculosPorCategoria(int categoria);
     }
 }

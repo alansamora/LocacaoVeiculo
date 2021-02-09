@@ -12,7 +12,8 @@ namespace Locacao.Dominio.Entidades
         public double ValorHora { get; set; }
         public string Combustivel { get; set; }
         public int LimitePortaMalas { get; set; }
-        public string Categoria { get; set; }
+        public string CategoriaString { get; set; }
+        public int CategoriaId { get; set; }
         public string Marca { get; set; }
         public string Modelo { get; set; }
     }

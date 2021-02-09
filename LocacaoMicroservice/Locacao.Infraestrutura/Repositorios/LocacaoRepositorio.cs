@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Text;
 using Locacao.Infraestrutura.DBContexts;
 using System.Linq;
+using Locacao.Dominio.ModeloDB;
 
 namespace Locacao.Infraestrutura.Repositorios
 {
@@ -17,40 +18,30 @@ namespace Locacao.Infraestrutura.Repositorios
             _dbContext = dbContext;
         }
 
-        public void InserirLocacao(Dominio.Entidades.Locacao locacao)
+        public void InserirLocacao(LocacaoDB locacao)
         {
             _dbContext.Add(locacao);
             _dbContext.SaveChanges();
         }
 
-        public List<Dominio.Entidades.Locacao> ListarLocacoes()
+        public List<LocacaoDB> ListarLocacoes()
         {
             return _dbContext.Locacoes.ToList();
         }
 
-        public List<Dominio.Entidades.Locacao> ListarLocacoesPorDataECliente(DateTime dataLocacao, int clienteId)
+        public List<LocacaoDB> ListarLocacoesPorData(DateTime dataLocacaoInicio, DateTime dataLocacaoFim)
         {
-            throw new NotImplementedException();
+            return _dbContext.Locacoes.Where(l => (dataLocacaoInicio >= l.DataInicioLocacao && dataLocacaoInicio < l.DataFimLocacao) || (dataLocacaoFim > l.DataInicioLocacao && dataLocacaoFim <= l.DataFimLocacao)).ToList();
         }
 
-        public List<Veiculo> ListarVeiculosDisponiveisParaLocacaoPorData(DateTime dataInicio, DateTime dataFim)
+        public List<LocacaoDB> ListarLocacoesPorDataECliente(DateTime dataLocacaoInicio, DateTime dataLocacaoFim, int clienteId)
         {
-            throw new NotImplementedException();
+            return _dbContext.Locacoes.Where(l => l.ClienteId == clienteId && l.DataInicioLocacao >= dataLocacaoInicio && l.DataFimLocacao <= dataLocacaoFim).ToList();
         }
 
-        public Dominio.Entidades.Locacao ObterLocacaoPorId(int locacaoId)
+        public LocacaoDB ObterLocacaoPorId(int locacaoId)
         {
             return _dbContext.Locacoes.Find(locacaoId);
-        }
-
-        public double ObterValorTotalDiarias(int veiculoId, double valorHora, double totalHoras)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Valor ObterValorTotalLocacao(int locacaoId, bool carroLimpo, bool tanqueCheio, bool amassado, bool arranhao)
-        {
-            throw new NotImplementedException();
         }
     }
 }

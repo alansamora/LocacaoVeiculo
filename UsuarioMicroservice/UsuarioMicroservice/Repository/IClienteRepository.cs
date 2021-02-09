@@ -12,6 +12,7 @@ namespace UsuarioMicroservice.Repository
         void DeletarCliente(int clienteId);
         void AtualizarCliente(Cliente cliente);
         Cliente ObterClientePorId(int clienteId);
+        Cliente ObterClientePorCpfESenha(string cpf, string senha);
         List<Cliente> ListarClientes();
     }
 }

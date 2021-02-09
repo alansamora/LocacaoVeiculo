@@ -31,7 +31,7 @@ namespace VeiculoMicroservice.Controllers
         {
             var modelos = _modeloRepository.ListarModelos();
             var modelosRetorno = new List<Modelo>();
-            if (modelos != null)
+            if (modelos.Count > 0)
             {
                 foreach (ModeloDB modelDB in modelos)
                 {

@@ -4,7 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Locacao.Aplicacao;
 using Locacao.Aplicacao.Interfaces;
+using Locacao.Dominio.Repositorios;
 using Locacao.Infraestrutura.DBContexts;
+using Locacao.Infraestrutura.Repositorios;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -30,8 +32,10 @@ namespace LocacaoMicroservice
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddDbContext<LocacaoContext>(u => u.UseSqlServer(Configuration.GetConnectionString("LocacaoDB")));
+            services.AddDbContext<LocacaoContext>(u => u.UseSqlServer(Configuration.GetConnectionString("LocacaoVeicDB"), m => m.MigrationsAssembly("Locacao.Api")));
             services.AddScoped<ILocacaoAplicacao, LocacaoAplicacao>();
+            services.AddScoped<ILocacaoRepositorio, LocacaoRepositorio>();
+            services.AddScoped<IVeiculoRepositorio, VeiculoRepositorio>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo

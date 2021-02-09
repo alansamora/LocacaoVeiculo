@@ -40,9 +40,18 @@ namespace UsuarioMicroservice.Repository
             return _dbContext.Clientes.ToList();
         }
 
+        public Cliente ObterClientePorCpfESenha(string cpf, string senha)
+        {
+            var cliente = _dbContext.Clientes.Where(c => c.Cpf == cpf && c.Senha == senha).FirstOrDefault();
+            if (cliente != null) return cliente;
+            return new Cliente();
+        }
+
         public Cliente ObterClientePorId(int clienteId)
         {
-            return _dbContext.Clientes.Find(clienteId);
+            var cliente = _dbContext.Clientes.Find(clienteId);
+            if (cliente != null) return cliente;
+            return new Cliente();
         }
     }
 }

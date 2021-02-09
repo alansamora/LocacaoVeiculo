@@ -40,6 +40,11 @@ namespace VeiculoMicroservice.Repository
             return _dbContext.Veiculos.ToList();
         }
 
+        public List<VeiculoDB> ListarVeiculosPorCategoria(int categoria)
+        {
+            return _dbContext.Veiculos.Where(v => (int)v.Categoria == categoria).ToList();
+        }
+
         public VeiculoDB ObterVeiculoPorId(int veiculoId)
         {
             return _dbContext.Veiculos.Find(veiculoId);

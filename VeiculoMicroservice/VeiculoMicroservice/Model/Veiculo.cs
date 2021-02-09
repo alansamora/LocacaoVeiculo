@@ -12,21 +12,23 @@ namespace VeiculoMicroservice.Model
         public string Placa { get; set; }
         public int Ano { get; set; }
         public double ValorHora { get; set; }
-        public TipoCombustivel Combustivel { get; set; }
+        public string Combustivel { get; set; }
         public int LimitePortaMalas { get; set; }
-        public TipoCategoria Categoria { get; set; }
-        public Marca Marca { get; set; }
-        public Modelo Modelo { get; set; }
+        public string CategoriaString { get; set; }
+        public int CategoriaId { get; set; }
+        public string Marca { get; set; }
+        public string Modelo { get; set; }
 
-        public Veiculo(VeiculoDB veiculoDB, Marca marca, Modelo modelo)
+        public Veiculo(VeiculoDB veiculoDB, string marca, string modelo)
         {
             Id = veiculoDB.Id;
             Placa = veiculoDB.Placa;
             Ano = veiculoDB.Ano;
             ValorHora = veiculoDB.ValorHora;
-            Combustivel = veiculoDB.Combustivel;
+            Combustivel = veiculoDB.Combustivel.ToString();
             LimitePortaMalas = veiculoDB.LimitePortaMalas;
-            Categoria = veiculoDB.Categoria;
+            CategoriaString = veiculoDB.Categoria.ToString();
+            CategoriaId = (int)veiculoDB.Categoria;
             Marca = marca;
             Modelo = modelo;
         }

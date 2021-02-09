@@ -8,5 +8,7 @@ namespace Locacao.Dominio.Repositorios
     public interface IVeiculoRepositorio
     {
         List<Veiculo> ListarVeiculos();
+        Veiculo ObterVeiculoPorId(int veiculoId);
+        List<Veiculo> ListarVeiculosPorCategoria(int categoria);
     }
 }

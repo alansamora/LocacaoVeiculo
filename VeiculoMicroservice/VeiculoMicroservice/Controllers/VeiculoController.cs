@@ -33,14 +33,34 @@ namespace VeiculoMicroservice.Controllers
         {
             var veiculos = _veiculoRepository.ListarVeiculos();
             var veiculosRetorno = new List<Veiculo>();
-            if (veiculos != null)
+            if (veiculos.Count > 0)
             {
                 foreach (VeiculoDB veiculoDB in veiculos)
                 {
                     var modelo = _modeloRepository.ObterModeloPorId(veiculoDB.ModeloId);
                     var modeloRetorno = new Modelo(modelo.Id, modelo.Nome, _marcaRepository.ObterMarcaPorId(modelo.MarcaId));
                     var marca = _marcaRepository.ObterMarcaPorId(veiculoDB.MarcaId);
-                    var veiculo = new Veiculo(veiculoDB, marca, modeloRetorno);
+                    var veiculo = new Veiculo(veiculoDB, marca.Nome, modeloRetorno.Nome);
+                    veiculosRetorno.Add(veiculo);
+                }
+            }
+            return new OkObjectResult(veiculosRetorno);
+        }
+
+        // GET Buscar todos os veiculos por categoria
+        [HttpGet("{categoria}/categoria")]
+        public IActionResult Get(TipoCategoria categoria)
+        {
+            var veiculos = _veiculoRepository.ListarVeiculosPorCategoria((int)categoria);
+            var veiculosRetorno = new List<Veiculo>();
+            if (veiculos.Count > 0)
+            {
+                foreach (VeiculoDB veiculoDB in veiculos)
+                {
+                    var modelo = _modeloRepository.ObterModeloPorId(veiculoDB.ModeloId);
+                    var modeloRetorno = new Modelo(modelo.Id, modelo.Nome, _marcaRepository.ObterMarcaPorId(modelo.MarcaId));
+                    var marca = _marcaRepository.ObterMarcaPorId(veiculoDB.MarcaId);
+                    var veiculo = new Veiculo(veiculoDB, marca.Nome, modeloRetorno.Nome);
                     veiculosRetorno.Add(veiculo);
                 }
             }
@@ -57,7 +77,7 @@ namespace VeiculoMicroservice.Controllers
                 var modelo = _modeloRepository.ObterModeloPorId(veiculo.ModeloId);
                 var modeloRetorno = new Modelo(modelo.Id, modelo.Nome, _marcaRepository.ObterMarcaPorId(modelo.MarcaId));
                 var marca = _marcaRepository.ObterMarcaPorId(veiculo.MarcaId);
-                var veiculoRetorno = new Veiculo(veiculo, marca, modeloRetorno);
+                var veiculoRetorno = new Veiculo(veiculo, marca.Nome, modeloRetorno.Nome);
                 return new OkObjectResult(veiculoRetorno);
             }
             return new NoContentResult();
@@ -77,7 +97,7 @@ namespace VeiculoMicroservice.Controllers
                 var modelo = _modeloRepository.ObterModeloPorId(veiculo.ModeloId);
                 var modeloRetorno = new Modelo(modelo.Id, modelo.Nome, _marcaRepository.ObterMarcaPorId(modelo.MarcaId));
                 var marca = _marcaRepository.ObterMarcaPorId(veiculo.MarcaId);
-                var veiculoRetorno = new Veiculo(veiculo, marca, modeloRetorno);
+                var veiculoRetorno = new Veiculo(veiculo, marca.Nome, modeloRetorno.Nome);
                 return CreatedAtAction(nameof(Get), new { id = veiculo.Id }, veiculoRetorno);
             }
             return new NoContentResult();

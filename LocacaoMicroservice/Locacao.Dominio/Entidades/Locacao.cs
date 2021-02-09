@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Locacao.Dominio.ModeloDB;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -12,13 +13,19 @@ namespace Locacao.Dominio.Entidades
         public DateTime DataInicioLocacao { get; set; }
         public DateTime DataFimLocacao { get; set; }
         public int ClienteId { get; set; }
+        public double ValorTotal { get; set; }
         public Veiculo Veiculo { get; set; }
-
-        private double _valorTotal;
-        public double ValorTotal
+        
+        public Locacao(LocacaoDB locacaoDB, Veiculo veiculo)
         {
-            get => _valorTotal;
-            set => _valorTotal = (ValorHora * TotalHora);
+            Id = locacaoDB.Id;
+            ValorHora = locacaoDB.ValorHora;
+            TotalHora = (locacaoDB.DataFimLocacao - locacaoDB.DataInicioLocacao).TotalHours;
+            DataInicioLocacao = locacaoDB.DataInicioLocacao;
+            DataFimLocacao = locacaoDB.DataFimLocacao;
+            ClienteId = locacaoDB.ClienteId;
+            ValorTotal = (locacaoDB.ValorHora * TotalHora);
+            Veiculo = veiculo;
         }
     }
 }
