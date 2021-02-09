@@ -12,6 +12,9 @@ using VeiculoMicroservice.Repository;
 
 namespace VeiculoMicroservice.Controllers
 {
+    /// <summary>
+    /// Serviço de Veículo
+    /// </summary>
     [Route("api/veiculo")]
     [ApiController]
     public class VeiculoController : ControllerBase
@@ -27,6 +30,10 @@ namespace VeiculoMicroservice.Controllers
             _marcaRepository = marcaRepository;
         }
 
+        /// <summary>
+        /// Buscar todos os veículos.
+        /// </summary>
+        /// <returns>Lista de objeto veiculo</returns>
         // GET: Buscar todos os veiculos
         [HttpGet]
         public IActionResult Get()
@@ -47,6 +54,11 @@ namespace VeiculoMicroservice.Controllers
             return new OkObjectResult(veiculosRetorno);
         }
 
+        /// <summary>
+        /// Listar veículos pela categoria.
+        /// </summary>
+        /// <param name="categoria">Categoria do veículo (1, 2 ou 3)</param>
+        /// <returns>Lista de objeto veiculo</returns>
         // GET Buscar todos os veiculos por categoria
         [HttpGet("{categoria}/categoria")]
         public IActionResult Get(TipoCategoria categoria)
@@ -67,6 +79,11 @@ namespace VeiculoMicroservice.Controllers
             return new OkObjectResult(veiculosRetorno);
         }
 
+        /// <summary>
+        /// Buscar um veículo pelo id.
+        /// </summary>
+        /// <param name="id">Id do veículo</param>
+        /// <returns>Objeto veiculo</returns>
         // GET Buscar o veiculo pelo id
         [HttpGet("{id}")]
         public IActionResult Get(int id)
@@ -83,6 +100,10 @@ namespace VeiculoMicroservice.Controllers
             return new NoContentResult();
         }
 
+        /// <summary>
+        /// Inserir um veículo.
+        /// </summary>
+        /// <returns>Objeto veiculo</returns>
         // POST Inserir um veiculo
         [HttpPost]
         public IActionResult Post([FromBody] VeiculoDB veiculo)
@@ -103,8 +124,13 @@ namespace VeiculoMicroservice.Controllers
             return new NoContentResult();
         }
 
+        /// <summary>
+        /// Atualizar os dados de um veículo.
+        /// </summary>
+        /// <param name="veiculo">Objeto veiculo para atualizar</param>
+        /// <returns>Objeto veiculo</returns>
         // PUT Atualizar um veiculo
-        [HttpPut("{id}")]
+        [HttpPut("{veiculo}")]
         public IActionResult Put([FromBody] VeiculoDB veiculo)
         {
             if (veiculo != null)
@@ -119,6 +145,11 @@ namespace VeiculoMicroservice.Controllers
             return new NoContentResult();
         }
 
+        /// <summary>
+        /// Excluir um veículo pelo id.
+        /// </summary>
+        /// <param name="id">Id do veiculo</param>
+        /// <returns>Mensagem de sucesso</returns>
         // DELETE Deletar um veiculo
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)

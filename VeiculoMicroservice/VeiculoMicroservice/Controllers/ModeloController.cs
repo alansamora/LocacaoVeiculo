@@ -12,6 +12,9 @@ using VeiculoMicroservice.Repository;
 
 namespace VeiculoMicroservice.Controllers
 {
+    /// <summary>
+    /// Serviço de Modelo
+    /// </summary>
     [Route("api/modelo")]
     [ApiController]
     public class ModeloController : ControllerBase
@@ -25,6 +28,10 @@ namespace VeiculoMicroservice.Controllers
             _marcaRepository = marcaRepository;
         }
 
+        /// <summary>
+        /// Buscar todos os modelos de veículos.
+        /// </summary>
+        /// <returns>Lista de objeto modelo</returns>
         // GET: Buscar todos os modelos
         [HttpGet]
         public IActionResult Get()
@@ -42,6 +49,11 @@ namespace VeiculoMicroservice.Controllers
             return new OkObjectResult(modelosRetorno);
         }
 
+        /// <summary>
+        /// Buscar um modelo de veículo pelo id.
+        /// </summary>
+        /// <param name="id">Id do modelo</param>
+        /// <returns>Objeto modelo</returns>
         // GET Buscar o modelo por id
         [HttpGet("{id}")]
         public IActionResult Get(int id)
@@ -55,6 +67,10 @@ namespace VeiculoMicroservice.Controllers
             return new NoContentResult();
         }
 
+        /// <summary>
+        /// Inserir um modelo de veículo.
+        /// </summary>
+        /// <returns>Objeto modelo</returns>
         // POST Inserir um modelo
         [HttpPost]
         public IActionResult Post([FromBody] ModeloDB modelo)
@@ -68,8 +84,13 @@ namespace VeiculoMicroservice.Controllers
             return new NoContentResult();
         }
 
+        /// <summary>
+        /// Atualizar os dados de um modelo de veículo.
+        /// </summary>
+        /// <param name="modelo">Objeto modelo para atualizar</param>
+        /// <returns>Objeto modelo</returns>
         // PUT Atualizar um modelo
-        [HttpPut("{id}")]
+        [HttpPut("{modelo}")]
         public IActionResult Put([FromBody] ModeloDB modelo)
         {
             if (modelo != null)
@@ -84,6 +105,11 @@ namespace VeiculoMicroservice.Controllers
             return new NoContentResult();
         }
 
+        /// <summary>
+        /// Excluir um modelo de veículo pelo id.
+        /// </summary>
+        /// <param name="id">Id do modelo</param>
+        /// <returns>Mensagem de sucesso</returns>
         // DELETE Deletar um modelo
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)

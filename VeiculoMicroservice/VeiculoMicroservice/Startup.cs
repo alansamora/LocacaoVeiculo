@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
@@ -46,6 +47,8 @@ namespace VeiculoMicroservice
                         Email = "alan.samora@localiza.com"
                     }
                 });
+                var filePath = Path.Combine(AppContext.BaseDirectory, "VeiculoMicroservice.xml");
+                c.IncludeXmlComments(filePath);
             });
         }
 

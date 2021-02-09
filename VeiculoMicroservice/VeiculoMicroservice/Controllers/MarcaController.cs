@@ -11,6 +11,9 @@ using VeiculoMicroservice.Repository;
 
 namespace VeiculoMicroservice.Controllers
 {
+    /// <summary>
+    /// Serviço de Marca
+    /// </summary>
     [Route("api/marca")]
     [ApiController]
     public class MarcaController : ControllerBase
@@ -22,6 +25,10 @@ namespace VeiculoMicroservice.Controllers
             _marcaRepository = marcaRepository;
         }
 
+        /// <summary>
+        /// Buscar todas as marcas de veículos.
+        /// </summary>
+        /// <returns>Lista de objeto marca</returns>
         // GET: Buscar todas as marcas
         [HttpGet]
         public IActionResult Get()
@@ -30,6 +37,11 @@ namespace VeiculoMicroservice.Controllers
             return new OkObjectResult(marcas);
         }
 
+        /// <summary>
+        /// Buscar uma marca de veículo pelo id.
+        /// </summary>
+        /// <param name="id">Id da marca</param>
+        /// <returns>Objeto marca</returns>
         // GET Buscar a marca pelo id
         [HttpGet("{id}")]
         public IActionResult Get(int id)
@@ -38,6 +50,10 @@ namespace VeiculoMicroservice.Controllers
             return new OkObjectResult(marca);
         }
 
+        /// <summary>
+        /// Inserir uma marca de veículo.
+        /// </summary>
+        /// <returns>Objeto marca</returns>
         // POST Inserir uma marca
         [HttpPost]
         public IActionResult Post([FromBody] Marca marca)
@@ -50,8 +66,13 @@ namespace VeiculoMicroservice.Controllers
             }
         }
 
+        /// <summary>
+        /// Atualizar os dados de uma marca de veículo.
+        /// </summary>
+        /// <param name="marca">Objeto marca para atualizar</param>
+        /// <returns>Objeto marca</returns>
         // PUT Atualizar uma marca
-        [HttpPut("{id}")]
+        [HttpPut("{marca}")]
         public IActionResult Put([FromBody] Marca marca)
         {
             if (marca != null)
@@ -66,6 +87,11 @@ namespace VeiculoMicroservice.Controllers
             return new NoContentResult();
         }
 
+        /// <summary>
+        /// Excluir uma marca de veículo pelo id.
+        /// </summary>
+        /// <param name="id">Id da marca</param>
+        /// <returns>Mensagem de sucesso</returns>
         // DELETE Deletar uma marca
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
