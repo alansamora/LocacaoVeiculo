@@ -31,12 +31,36 @@ namespace Locacao.Infraestrutura.Repositorios
 
         public List<LocacaoDB> ListarLocacoesPorData(DateTime dataLocacaoInicio, DateTime dataLocacaoFim)
         {
-            return _dbContext.Locacoes.Where(l => (dataLocacaoInicio >= l.DataInicioLocacao && dataLocacaoInicio < l.DataFimLocacao) || (dataLocacaoFim > l.DataInicioLocacao && dataLocacaoFim <= l.DataFimLocacao)).ToList();
+            return _dbContext.Locacoes.Where(l =>
+                    (l.DataInicioLocacao < dataLocacaoInicio &&
+                     dataLocacaoInicio < l.DataFimLocacao)
+                    ||
+                    (l.DataInicioLocacao < dataLocacaoFim &&
+                     dataLocacaoFim <= l.DataFimLocacao)
+                    ||
+                    (dataLocacaoInicio < l.DataInicioLocacao &&
+                     l.DataInicioLocacao < dataLocacaoFim)
+                    ||
+                    (dataLocacaoInicio < l.DataFimLocacao &&
+                     l.DataFimLocacao <= dataLocacaoFim)
+                    ).ToList();
         }
 
         public List<LocacaoDB> ListarLocacoesPorDataECliente(DateTime dataLocacaoInicio, DateTime dataLocacaoFim, int clienteId)
         {
-            return _dbContext.Locacoes.Where(l => l.ClienteId == clienteId && l.DataInicioLocacao >= dataLocacaoInicio && l.DataFimLocacao <= dataLocacaoFim).ToList();
+            return _dbContext.Locacoes.Where(l => l.ClienteId == clienteId &&
+                (l.DataInicioLocacao < dataLocacaoInicio &&
+                     dataLocacaoInicio < l.DataFimLocacao)
+                    ||
+                    (l.DataInicioLocacao < dataLocacaoFim &&
+                     dataLocacaoFim <= l.DataFimLocacao)
+                    ||
+                    (dataLocacaoInicio < l.DataInicioLocacao &&
+                     l.DataInicioLocacao < dataLocacaoFim)
+                    ||
+                    (dataLocacaoInicio < l.DataFimLocacao &&
+                     l.DataFimLocacao <= dataLocacaoFim)
+                                                ).ToList();
         }
 
         public LocacaoDB ObterLocacaoPorId(int locacaoId)

@@ -10,7 +10,6 @@ C:\Users\137105\LocacaoVeiculo\LocacaoVeiculoWeb\LocacaoVeiculoWeb\obj\Debug\net
 C:\Users\137105\LocacaoVeiculo\LocacaoVeiculoWeb\LocacaoVeiculoWeb\obj\Debug\netcoreapp3.1\LocacaoVeiculoWeb.TagHelpers.output.cache
 C:\Users\137105\LocacaoVeiculo\LocacaoVeiculoWeb\LocacaoVeiculoWeb\obj\Debug\netcoreapp3.1\LocacaoVeiculoWeb.RazorCoreGenerate.cache
 C:\Users\137105\LocacaoVeiculo\LocacaoVeiculoWeb\LocacaoVeiculoWeb\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
-C:\Users\137105\LocacaoVeiculo\LocacaoVeiculoWeb\LocacaoVeiculoWeb\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
 C:\Users\137105\LocacaoVeiculo\LocacaoVeiculoWeb\LocacaoVeiculoWeb\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
 C:\Users\137105\LocacaoVeiculo\LocacaoVeiculoWeb\LocacaoVeiculoWeb\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
 C:\Users\137105\LocacaoVeiculo\LocacaoVeiculoWeb\LocacaoVeiculoWeb\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
@@ -108,5 +107,3 @@ C:\Users\137105\LocacaoVeiculo\LocacaoVeiculoWeb\LocacaoVeiculoWeb\bin\Debug\net
 C:\Users\137105\LocacaoVeiculo\LocacaoVeiculoWeb\LocacaoVeiculoWeb\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\137105\LocacaoVeiculo\LocacaoVeiculoWeb\LocacaoVeiculoWeb\obj\Debug\netcoreapp3.1\LocacaoVeiculoWeb.csproj.CoreCompileInputs.cache
 C:\Users\137105\LocacaoVeiculo\LocacaoVeiculoWeb\LocacaoVeiculoWeb\obj\Debug\netcoreapp3.1\LocacaoVeiculoWeb.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\137105\LocacaoVeiculo\LocacaoVeiculoWeb\LocacaoVeiculoWeb\obj\Debug\netcoreapp3.1\Razor\Views\Home\Reservation.cshtml.g.cs
-C:\Users\137105\LocacaoVeiculo\LocacaoVeiculoWeb\LocacaoVeiculoWeb\obj\Debug\netcoreapp3.1\Razor\Views\Home\Location.cshtml.g.cs

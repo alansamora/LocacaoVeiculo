@@ -12,6 +12,10 @@ a, .text-blue {
     color: #0366d6 !important;
 }
 
+.text-red {
+    color: #dc3545 !important;
+}
+
 .btn-primary {
   color: #fff;
   background-color: #1b6ec2;
@@ -99,4 +103,12 @@ body {
 
 .no_margin_bottom{
     margin-bottom: 0px;
+}
+
+.display_none{
+    display: none;
+}
+
+.margin_bottom {
+    margin-bottom: 25px;
 }

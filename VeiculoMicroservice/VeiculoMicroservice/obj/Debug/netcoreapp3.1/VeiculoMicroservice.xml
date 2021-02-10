@@ -82,7 +82,7 @@
         </member>
         <member name="T:VeiculoMicroservice.Controllers.VeiculoController">
             <summary>
-            Serviço de Veiculo
+            Serviço de Veículo
             </summary>
         </member>
         <member name="M:VeiculoMicroservice.Controllers.VeiculoController.Get">
