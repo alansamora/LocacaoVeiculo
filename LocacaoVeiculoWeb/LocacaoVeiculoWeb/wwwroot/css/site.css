@@ -112,3 +112,7 @@ body {
 .margin_bottom {
     margin-bottom: 25px;
 }
+
+.paddin_left{
+    padding-left: 45px !important;
+}

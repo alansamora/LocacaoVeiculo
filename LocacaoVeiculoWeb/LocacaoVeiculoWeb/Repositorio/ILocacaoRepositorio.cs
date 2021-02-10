@@ -10,5 +10,6 @@ namespace LocacaoVeiculoWeb.Repositorio
     {
         List<Veiculo> BuscarVeiculosDisponiveis(BuscarVeiculo buscarVeiculo);
         List<Locacao> BuscarLocacoes(BuscarLocacao buscarLocacao);
+        Locacao InserirLocacao(InserirLocacao inserirLocacao);
     }
 }

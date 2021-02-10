@@ -2,9 +2,14 @@
 // for details on configuring this project to bundle and minify static web assets.
 
 // Write your JavaScript code.
+
+//Variaveis globais
 var categoriaId = 0;
 var clienteId = 0;
 var clienteNome = '';
+var clienteSenha = '';
+var locacao = null;
+var confirmLocacao = false;
 
 //Ação botão selecionar categoria
 $('.buttonCategoriaSelecioda').click(function () {
@@ -67,6 +72,7 @@ function updateTabelaReserva(veiculos) {
     if (html.length > 2) $('#reservaTbody').html(html);
     else $('#reservaTbody').html('<tr><td colspan="8">Nenhum veículo encontrado</td></tr>');
 
+    //Ação botão selecionar veiculo para locacao
     $('.buttonSelecionarVeiculo').click(function () {
         var veiculoId = $(this).parent().parent().attr('veiculoId');
         var marca = $(this).parent().parent().attr('marca');
@@ -74,18 +80,70 @@ function updateTabelaReserva(veiculos) {
         var placa = $(this).parent().parent().attr('placa');
         var ano = $(this).parent().parent().attr('ano');
         var combustivel = $(this).parent().parent().attr('combustivel');
-        var valorHora = $(this).parent().parent().attr('combustivel'); 
+        var valorHora = $(this).parent().parent().attr('valorHora');
+        var dataInicio = new Date($('#reservaDataInicio').val());
+        var dataFim = new Date($('#reservaDataFim').val());
+        var totalHora = Math.abs(dataInicio - dataFim) / 36e5;
+
+        locacao = {
+            ValorHora: valorHora,
+            DataInicioLocacao: $('#reservaDataInicio').val(),
+            DataFimLocacao: $('#reservaDataFim').val(),
+            ClienteId: clienteId,
+            VeiculoId: veiculoId
+        };
+
         $('#detalheVeiculoModal').modal('toggle');
         $('#veiculoTitulo').html(marca + ' - ' + modelo);
         $('#placaSpan').html(placa);
         $('#anoSpan').html(ano);
         $('#combustivelSpan').html(combustivel);
-        $('#valorHoraSpan').html('R$ ' + valorHora.toFixed(2));
-        $('#dataInicoSpan').html($('#reservaDataInicio').val());
-        $('#dataFimSpan').html($('#reservaDataFim').val());
+        $('#valorHoraSpan').html('R$ ' + Number(valorHora).toFixed(2));
+        $('#dataInicoSpan').html(dataInicio.toLocaleString());
+        $('#dataFimSpan').html(dataFim.toLocaleString());
+        $('#totalHorasTitulo').html(totalHora + ' h');
+        $('#valorTotalTitulo').html('R$ ' + (totalHora * Number(valorHora)).toFixed(2));
     });
 }
 
+//Ação botão confirmar locacao veiculo
+$('#buttonConfirmarLocacao').click(function () {
+    if (clienteId != null && clienteId > 0) {
+        $('#confirmarSenhaModal').modal('toggle');
+        $('#clienteNomeLabel').html(clienteNome);
+    } else {
+        $('#loginModal').modal('toggle');
+        confirmLocacao = true;
+    }
+});
+
+//Ação botão confirmar confirmar identidade
+$('#buttonConfirmarIdentidade').click(function () {
+    if ($('#confirmarIdentidadeSenha').val() != null && $('#confirmarIdentidadeSenha').val().length > 4) {
+        if (clienteSenha == $('#confirmarIdentidadeSenha').val().trim()) {
+            criarLocacao();
+            $('#confirmarSenhaModal').modal('toggle');
+        } else alert('Senha inálida');
+    } else alert('Insira uma senha válida');
+});
+
+//Função para criar a locacao
+function criarLocacao() {
+    $.post("/home/InserirLocacao/", locacao)
+        .done(function (retorno) {
+            if (retorno.id != null && retorno.id > 0) {
+                $('#conteudoReserva').hide();
+                $('#reservaDataInicio').val('');
+                $('#reservaDataFim').val('');
+                $('#reservaTbody').html('<tr><td colspan="8">Nenhum veículo encontrado</td></tr>');
+                $('#detalheVeiculoModal').modal('toggle');
+                alert('Locação criada com sucesso!');
+            } else alert('Ocorreu um erro, tente novamente mais tarde');
+        })
+        .fail(function (error) {
+            alert('Ocorreu um erro, tente novamente mais tarde');
+        });
+}
 
 //Ação botão buscar locacoes realizadas
 $('#buttonBuscarLocacao').click(function () {
@@ -142,6 +200,12 @@ function updateTabelaLocacao(locacoes) {
     else $('#locacaoTbody').html('<tr><td colspan="11">Nenhuma locação encontrada</td></tr>');
 }
 
+
+$('#buttonAbrirLogin').click(function () {
+    $('#login_cpf').val('');
+    $('#login_senha').val('');
+});
+
 //Ação botão fazer login
 $('#buttonLogin').click(function () {
     var cpf = $('#login_cpf').val();
@@ -157,7 +221,8 @@ $('#buttonLogin').click(function () {
             $.post("/home/BuscarUsuarioPorCpfESenha/", parametros)
                 .done(function (retorno) {
                     if (retorno.id != null && retorno.id > 0) {
-                        updateTelaLogin();
+                        updateTelaLogin(retorno);
+                        if (confirmLocacao) criarLocacao();
                     } else alert('Usuário e/ou senha não encontrados');
                 })
                 .fail(function (error) {
@@ -216,10 +281,12 @@ function updateChamarInicio() {
     $('#locacaoTbody').html('<tr><td colspan="11">Nenhuma locação encontrada</td></tr>');
 }
 
+//Ação botão logout
 $('#logoutLi').click(function () {
     $('#logoutModal').modal('toggle');
 });
 
+//Ação botão confirmar logout
 $('#logoutConfirmButton').click(function () {
     $('#loginLi').show();
     $('#logoutLi').hide();
@@ -227,21 +294,26 @@ $('#logoutConfirmButton').click(function () {
     $('#clienteNomeLi').hide();
     clienteId = 0;
     clienteNome = '';
+    clienteSenha = '';
     $('#clienteNometext').html('');
     updateChamarInicio();
     $('#logoutModal').modal('toggle');
+    confirmLocacao = false;
 });
 
-function updateTelaLogin() {
+//Função que atualiza a o modal de login
+function updateTelaLogin(cliente) {
     $('#loginModal').modal('toggle');
     $('#login_cpf').val('');
     $('#login_senha').val('');
-    clienteId = retorno.id;
-    clienteNome = retorno.nome;
+    clienteId = cliente.id;
+    clienteNome = cliente.nome;
+    clienteSenha = cliente.senha;
     $('#clienteNometext').html(clienteNome);
     updateTelaLogada();
 }
 
+//Ação botão confirmar cadastro do cliente
 $('#cadastroClienteButton').click(function () {
     if ($('#cadastro_nome').val() != null && $('#cadastro_nome').val().length > 0) {
         if ($('#cadastro_cpf').val() != null && $('#cadastro_cpf').val().length >= 14) {
@@ -255,21 +327,22 @@ $('#cadastroClienteButton').click(function () {
                                         if ($('#cadastro_confirmar_senha').val() != null && $('#cadastro_confirmar_senha').val().length>4) {
                                             if ($('#cadastro_senha').val() == $('#cadastro_confirmar_senha').val()) {
 
-                                                var endereco = $('#cadastro_rua').val() + ' - ' + $('#cadastro_numero').val() + ', ' + $('#cadastro_cidade').val() + '/' + $('#cadastro_estado').val() + ' - ' + $('#cadastro_cep').val();
+                                                var endereco = $('#cadastro_rua').val().trim() + ' - ' + $('#cadastro_numero').val() + ', ' + $('#cadastro_cidade').val().trim() + '/' + $('#cadastro_estado').val().trim() + ' - ' + $('#cadastro_cep').val();
                                                 var parametros = {
-                                                    Cpf: $('#cadastro_cpf').val(),
-                                                    Senha: $('#cadastro_senha').val(),
+                                                    Cpf: $('#cadastro_cpf').val().trim(),
+                                                    Senha: $('#cadastro_senha').val().trim(),
                                                     DataNascimento: $('#cadastro_data_nascimento').val(),
                                                     Endereco: endereco,
-                                                    Nome: $('#cadastro_nome').val()
+                                                    Nome: $('#cadastro_nome').val().trim()
                                                 };
                                                 $.post("/home/InserirUsuario/", parametros)
                                                     .done(function (retorno) {
                                                         if (retorno.id != null && retorno.id > 0) {
                                                             $('#cadastroModal').modal('toggle');
-                                                            updateTelaLogin();
+                                                            updateTelaLogin(retorno);
                                                             alert('Usuário cadastrado com sucesso!');
                                                             cleanCampos();
+                                                            if (confirmLocacao) criarLocacao();
                                                         } else alert('Usuário e/ou senha não encontrados');
                                                     })
                                                     .fail(function (error) {
@@ -289,6 +362,7 @@ $('#cadastroClienteButton').click(function () {
     } else alert('Insira um nome válido');
 });
 
+//Função de limpar campos formulario cadastro cliente
 function cleanCampos() {
     $('#cadastro_nome').val('');
     $('#cadastro_cpf').val('');

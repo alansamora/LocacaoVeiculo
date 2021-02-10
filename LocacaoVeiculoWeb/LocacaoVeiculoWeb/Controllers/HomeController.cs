@@ -56,6 +56,13 @@ namespace LocacaoVeiculoWeb.Controllers
             return Json(usuario);
         }
 
+        [HttpPost]
+        public ActionResult InserirLocacao(InserirLocacao inserirLocacao)
+        {
+            var locacao = _locacaoRepositorio.InserirLocacao(inserirLocacao);
+            return Json(locacao);
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
