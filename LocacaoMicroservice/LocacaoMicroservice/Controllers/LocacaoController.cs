@@ -115,6 +115,18 @@ namespace Locacao.Api.Controllers
         }
 
         /// <summary>
+        /// Buscar o pdf do modelo de contrato de locação.
+        /// </summary>
+        /// <returns>Array de byte</returns>
+        // GET Buscar o pdf do modelo de contrato de locação
+        [HttpGet("pdf")]
+        public IActionResult GetPdf()
+        {
+            var pdf = _locacaoAplicacao.ObterModeloContrato();
+            return new OkObjectResult(pdf);
+        }
+
+        /// <summary>
         /// Inserir uma locação.
         /// </summary>
         /// <returns>Objeto locacao</returns>

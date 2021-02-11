@@ -17,5 +17,6 @@ namespace Locacao.Aplicacao.Interfaces
         List<Veiculo> ListarVeiculosDisponiveisParaLocacaoPorDataECategoria(int categoria, DateTime dataInicio, DateTime dataFim);
         double ObterValorTotalDiarias(int veiculoId, double totalHoras);
         Valor ObterValorTotalLocacao(int locacaoId, bool carroLimpo, bool tanqueCheio, bool amassado, bool arranhao);
+        byte[] ObterModeloContrato();
     }
 }

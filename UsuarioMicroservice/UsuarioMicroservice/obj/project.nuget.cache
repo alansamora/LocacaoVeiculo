@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "gPkj3MFzwoQOC+xDazLDnNq9TEcDAiqACG+Y/YUJ6ihLf/nDJ4s0VXaTfpiMyBrmDSwVzprrP2bZZiIpoE3vQw==",
+  "dgSpecHash": "vIz2a/I9ohjWw59Rs8EsLrIJLEsu4zYuKpMa8TBefsVMUAej33ATbJUzEraF31TFBVoIVZFuLN4QF+RSHEUB/Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\137105\\LocacaoVeiculo\\UsuarioMicroservice\\UsuarioMicroservice\\UsuarioMicroservice.csproj",
+  "projectFilePath": "C:\\Users\\137105\\locacaoVeiculo\\UsuarioMicroservice\\UsuarioMicroservice\\UsuarioMicroservice.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\137105\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\137105\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

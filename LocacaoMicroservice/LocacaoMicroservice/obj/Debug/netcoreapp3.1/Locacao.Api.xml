@@ -59,6 +59,12 @@
             <param name="arranhao">Veiculo arranhado?</param>
             <returns>Objeto valor</returns>
         </member>
+        <member name="M:Locacao.Api.Controllers.LocacaoController.GetPdf">
+            <summary>
+            Buscar o pdf do modelo de contrato de locação.
+            </summary>
+            <returns>Array de byte</returns>
+        </member>
         <member name="M:Locacao.Api.Controllers.LocacaoController.Post(Locacao.Dominio.ModeloDB.LocacaoDB)">
             <summary>
             Inserir uma locação.

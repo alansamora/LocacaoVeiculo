@@ -4,6 +4,7 @@ using Locacao.Dominio.ModeloDB;
 using Locacao.Dominio.Repositorios;
 using System;
 using System.Collections.Generic;
+using System.IO;
 
 namespace Locacao.Aplicacao
 {
@@ -20,7 +21,7 @@ namespace Locacao.Aplicacao
 
         public void InserirLocacao(LocacaoDB locacao)
         {
-            _locacaoRepositorio.InserirLocacao(locacao);
+            if(locacao!=null) _locacaoRepositorio.InserirLocacao(locacao);
         }
 
         public List<Dominio.Entidades.Locacao> ListarLocacoes()
@@ -31,8 +32,12 @@ namespace Locacao.Aplicacao
 
         public List<Dominio.Entidades.Locacao> ListarLocacoesPorDataECliente(DateTime dataLocacaoInicio, DateTime dataLocacaoFim, int clienteId)
         {
-            var locacoes = _locacaoRepositorio.ListarLocacoesPorDataECliente(dataLocacaoInicio, dataLocacaoFim, clienteId);
-            return construirLocacoesParaRetorno(locacoes);
+            if (clienteId > 0)
+            {
+                var locacoes = _locacaoRepositorio.ListarLocacoesPorDataECliente(dataLocacaoInicio, dataLocacaoFim, clienteId);
+                return construirLocacoesParaRetorno(locacoes);
+            }
+            return new List<Dominio.Entidades.Locacao>();
         }
 
         public List<Veiculo> ListarVeiculos()
@@ -42,19 +47,23 @@ namespace Locacao.Aplicacao
 
         public List<Veiculo> ListarVeiculosDisponiveisParaLocacaoPorDataECategoria(int categoria, DateTime dataInicio, DateTime dataFim)
         {
-            var locacoes = _locacaoRepositorio.ListarLocacoesPorData(dataInicio, dataFim);
-            var veiculosRetorno = _veiculoRepositorio.ListarVeiculosPorCategoria(categoria);
-            if (locacoes.Count > 0)
+            if (categoria > 0)
             {
-                var veiculosId = new List<int>();
-                foreach (LocacaoDB locacaoDB in locacoes)
+                var locacoes = _locacaoRepositorio.ListarLocacoesPorData(dataInicio, dataFim);
+                var veiculosRetorno = _veiculoRepositorio.ListarVeiculosPorCategoria(categoria);
+                if (locacoes.Count > 0)
                 {
-                    var veiculo = _veiculoRepositorio.ObterVeiculoPorId(locacaoDB.VeiculoId);
-                    if (veiculo.CategoriaId == categoria) veiculosId.Add(veiculo.Id);
+                    var veiculosId = new List<int>();
+                    foreach (LocacaoDB locacaoDB in locacoes)
+                    {
+                        var veiculo = _veiculoRepositorio.ObterVeiculoPorId(locacaoDB.VeiculoId);
+                        if (veiculo.CategoriaId == categoria) veiculosId.Add(veiculo.Id);
+                    }
+                    veiculosRetorno = construirVeiculosParaRetorno(veiculosRetorno, veiculosId);
                 }
-                veiculosRetorno = construirVeiculosParaRetorno(veiculosRetorno, veiculosId);
+                return veiculosRetorno;
             }
-            return veiculosRetorno;
+            return new List<Veiculo>();
         }
 
         public Dominio.Entidades.Locacao ObterLocacaoPorId(int locacaoId)
@@ -83,7 +92,8 @@ namespace Locacao.Aplicacao
 
         public Veiculo ObterVeiculoPorId(int veiculoId)
         {
-            return _veiculoRepositorio.ObterVeiculoPorId(veiculoId);
+            if (veiculoId > 0) return _veiculoRepositorio.ObterVeiculoPorId(veiculoId);
+            else return new Veiculo();
         }
 
         public Valor ObterValorTotalLocacao(int locacaoId, bool carroLimpo, bool tanqueCheio, bool amassado, bool arranhao)
@@ -94,6 +104,11 @@ namespace Locacao.Aplicacao
                 return new Valor(locacao.ValorTotal, CalcularValorTaxa(locacao.ValorTotal, carroLimpo, tanqueCheio, amassado, arranhao));
             }
             return null;
+        }
+
+        public byte[] ObterModeloContrato()
+        {
+            return File.ReadAllBytes("Templates/contratoLocacao.pdf");
         }
 
         private double CalcularValorTaxa(double valorDiarias, bool carroLimpo, bool tanqueCheio, bool amassado, bool arranhao)

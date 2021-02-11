@@ -18,6 +18,12 @@
     <ProjectReference Include="..\Locacao.Aplicacao\Locacao.Aplicacao.csproj" />
     <ProjectReference Include="..\Locacao.Infraestrutura\Locacao.Infraestrutura.csproj" />
   </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Templates\contratoLocacao.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
 	<PropertyGroup>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<noWarn>1591</noWarn>
