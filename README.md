@@ -31,7 +31,7 @@ No microsserviço de Usuario ficaram concentradas as APIs referente aos Clientes
 
 Para o *BFF*, a responsabilidade foi de orquestrar as chamadas da tela para o devido serviço requisitado.
 
-Um desenho arquitetural também está disponibilizado na pasta "Arquitetura" (https://github.com/alansamora/LocacaoVeiculo/tree/main/Arquitetura) dentro da pasta raiz do projeto, para ilustração e melhor entendimento.
+Um desenho arquitetural também está disponibilizado na pasta "Arquitetura" (https://github.com/alansamora/LocacaoVeiculo/tree/master/Arquitetura) dentro da pasta raiz do projeto, para ilustração e melhor entendimento.
 
 ## Tecnologias utilizadas
 
